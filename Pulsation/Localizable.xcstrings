@@ -1,1358 +1,1356 @@
 {
-  "sourceLanguage" : "en",
-  "strings" : {
-    "%@" : {
-
-    },
-    "action.pause" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "إيقاف مؤقت"
+  "sourceLanguage": "en",
+  "strings": {
+    "%@": {},
+    "action.pause": {
+      "extractionState": "stale",
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "إيقاف مؤقت"
           }
         },
-        "bn" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "বিরতি"
+        "bn": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "বিরতি"
           }
         },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Pause"
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pause"
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Pausa"
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pausa"
           }
         },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Pause"
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pause"
           }
         },
-        "hi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "रोकें"
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "रोकें"
           }
         },
-        "id" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Jeda"
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Jeda"
           }
         },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Pausar"
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pausar"
           }
         },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Пауза"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Пауза"
           }
         },
-        "ur" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "روکیں"
+        "ur": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "روکیں"
           }
         },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "暂停"
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "暂停"
           }
         }
       }
     },
-    "action.start" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ابدأ"
+    "action.start": {
+      "extractionState": "stale",
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ابدأ"
           }
         },
-        "bn" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "শুরু"
+        "bn": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "শুরু"
           }
         },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Start"
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Start"
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Empezar"
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Empezar"
           }
         },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Démarrer"
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Démarrer"
           }
         },
-        "hi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "शुरू करें"
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "शुरू करें"
           }
         },
-        "id" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Mulai"
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mulai"
           }
         },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Iniciar"
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Iniciar"
           }
         },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Старт"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Старт"
           }
         },
-        "ur" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "شروع"
+        "ur": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "شروع"
           }
         },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "开始"
-          }
-        }
-      }
-    },
-    "metronome.bpmUnit" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "نبضة/د"
-          }
-        },
-        "bn" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "BPM"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "BPM"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "BPM"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "BPM"
-          }
-        },
-        "hi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "BPM"
-          }
-        },
-        "id" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "BPM"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "BPM"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "УД/МИН"
-          }
-        },
-        "ur" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "BPM"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "BPM"
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "开始"
           }
         }
       }
     },
-    "metronome.status.playing" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "يعمل الآن"
+    "metronome.bpmUnit": {
+      "extractionState": "stale",
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "نبضة/د"
           }
         },
-        "bn" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "চলছে"
+        "bn": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "BPM"
           }
         },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "PLAYING"
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "BPM"
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "EN MARCHA"
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "BPM"
           }
         },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "EN COURS"
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "BPM"
           }
         },
-        "hi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "चल रहा है"
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "BPM"
           }
         },
-        "id" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "BERJALAN"
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "BPM"
           }
         },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "TOCANDO"
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "BPM"
           }
         },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ИГРАЕТ"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "УД/МИН"
           }
         },
-        "ur" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "چل رہا ہے"
+        "ur": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "BPM"
           }
         },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "正在播放"
-          }
-        }
-      }
-    },
-    "metronome.status.ready" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "الميترونوم"
-          }
-        },
-        "bn" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "মেট্রোনোম"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "METRONOME"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "MÉTRONOMO"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "MÉTRONOME"
-          }
-        },
-        "hi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "मेट्रोनोम"
-          }
-        },
-        "id" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "METRONOM"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "METRÔNOMO"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "МЕТРОНОМ"
-          }
-        },
-        "ur" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "میٹرونوم"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "节拍器"
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "BPM"
           }
         }
       }
     },
-    "metronome.tapTempoHint" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "انقر لقياس السرعة"
+    "metronome.status.playing": {
+      "extractionState": "stale",
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "يعمل الآن"
           }
         },
-        "bn" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "গতি মাপতে ট্যাপ করুন"
+        "bn": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "চলছে"
           }
         },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "TAP FOR TEMPO"
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "PLAYING"
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "TOCA PARA MARCAR EL TEMPO"
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "EN MARCHA"
           }
         },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "TOUCHE POUR LE TEMPO"
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "EN COURS"
           }
         },
-        "hi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "गति मापने के लिए टैप करें"
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "चल रहा है"
           }
         },
-        "id" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "KETUK UNTUK MENGUKUR TEMPO"
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "BERJALAN"
           }
         },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "TOQUE PARA MARCAR O ANDAMENTO"
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "TOCANDO"
           }
         },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "НАЖМИТЕ, ЧТОБЫ ЗАДАТЬ ТЕМП"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ИГРАЕТ"
           }
         },
-        "ur" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "رفتار ناپنے کے لیے ٹیپ کریں"
+        "ur": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "چل رہا ہے"
           }
         },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "轻点以测定速度"
-          }
-        }
-      }
-    },
-    "mode.free" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "حر"
-          }
-        },
-        "bn" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "মুক্ত"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Free"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Libre"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Libre"
-          }
-        },
-        "hi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "स्वतंत्र"
-          }
-        },
-        "id" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Bebas"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Livre"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Свободно"
-          }
-        },
-        "ur" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "آزاد"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "自由"
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "正在播放"
           }
         }
       }
     },
-    "mode.free.description" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "حافظ على إيقاع ثابت بالسرعة التي تناسبك."
+    "metronome.status.ready": {
+      "extractionState": "stale",
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "الميترونوم"
           }
         },
-        "bn" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "নিজের গতিতে স্থির তাল ধরে রাখুন।"
+        "bn": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "মেট্রোনোম"
           }
         },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Keep a steady beat at your own pace."
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "METRONOME"
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Mantén el pulso a tu ritmo."
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "MÉTRONOMO"
           }
         },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Garde le tempo, à ton rythme."
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "MÉTRONOME"
           }
         },
-        "hi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "अपनी गति से स्थिर ताल बनाए रखें।"
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "मेट्रोनोम"
           }
         },
-        "id" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Jaga ketukan stabil sesuai ritmemu."
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "METRONOM"
           }
         },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Mantenha o ritmo no seu próprio tempo."
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "METRÔNOMO"
           }
         },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Сохраняйте ровный ритм в своём темпе."
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "МЕТРОНОМ"
           }
         },
-        "ur" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "اپنی رفتار سے تال برقرار رکھیں۔"
+        "ur": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "میٹرونوم"
           }
         },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "按自己的节奏保持稳定拍点。"
-          }
-        }
-      }
-    },
-    "mode.ramp" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "متصاعد"
-          }
-        },
-        "bn" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ক্রমবর্ধমান"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ramp"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Progresivo"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Progressif"
-          }
-        },
-        "hi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "तेज़ होता हुआ"
-          }
-        },
-        "id" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Bertahap"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Progressivo"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ускорение"
-          }
-        },
-        "ur" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "رفتہ رفتہ تیز"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "渐快"
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "节拍器"
           }
         }
       }
     },
-    "mode.ramp.badge" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "+٤/د"
+    "metronome.tapTempoHint": {
+      "extractionState": "stale",
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "انقر لقياس السرعة"
           }
         },
-        "bn" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "+৪/মিনিট"
+        "bn": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "গতি মাপতে ট্যাপ করুন"
           }
         },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "+4/MIN"
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "TAP FOR TEMPO"
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "+4/MIN"
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "TOCA PARA MARCAR EL TEMPO"
           }
         },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "+4/MIN"
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "TOUCHE POUR LE TEMPO"
           }
         },
-        "hi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "+4/मिनट"
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "गति मापने के लिए टैप करें"
           }
         },
-        "id" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "+4/MNT"
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "KETUK UNTUK MENGUKUR TEMPO"
           }
         },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "+4/MIN"
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "TOQUE PARA MARCAR O ANDAMENTO"
           }
         },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "+4/МИН"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "НАЖМИТЕ, ЧТОБЫ ЗАДАТЬ ТЕМП"
           }
         },
-        "ur" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "+۴/منٹ"
+        "ur": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "رفتار ناپنے کے لیے ٹیپ کریں"
           }
         },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "+4/分"
-          }
-        }
-      }
-    },
-    "mode.ramp.description" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "تزداد السرعة كل دقيقة."
-          }
-        },
-        "bn" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "প্রতি মিনিটে গতি বাড়ে।"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "The tempo speeds up every minute."
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "El tempo acelera cada minuto."
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Le tempo accélère chaque minute."
-          }
-        },
-        "hi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "हर मिनट गति बढ़ती है।"
-          }
-        },
-        "id" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tempo bertambah setiap menit."
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "O andamento acelera a cada minuto."
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Темп растёт каждую минуту."
-          }
-        },
-        "ur" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ہر منٹ رفتار بڑھتی ہے۔"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "每分钟加快一次。"
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "轻点以测定速度"
           }
         }
       }
     },
-    "mode.silence" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "صمت"
+    "mode.free": {
+      "extractionState": "stale",
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "حر"
           }
         },
-        "bn" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "নীরবতা"
+        "bn": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "মুক্ত"
           }
         },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Silence"
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Free"
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Silencio"
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Libre"
           }
         },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Silence"
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Libre"
           }
         },
-        "hi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "मौन"
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "स्वतंत्र"
           }
         },
-        "id" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Hening"
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bebas"
           }
         },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Silêncio"
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Livre"
           }
         },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Тишина"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Свободно"
           }
         },
-        "ur" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "خاموشی"
+        "ur": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "آزاد"
           }
         },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "静默"
-          }
-        }
-      }
-    },
-    "mode.silence.badge" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "١٢/١٢"
-          }
-        },
-        "bn" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "১২/১২"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "12/12"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "12/12"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "12/12"
-          }
-        },
-        "hi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "12/12"
-          }
-        },
-        "id" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "12/12"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "12/12"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "12/12"
-          }
-        },
-        "ur" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "۱۲/۱۲"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "12/12"
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "自由"
           }
         }
       }
     },
-    "mode.silence.description" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "يتوقف الصوت كل ١٢ ثانية."
+    "mode.free.description": {
+      "extractionState": "stale",
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "حافظ على إيقاع ثابت بالسرعة التي تناسبك."
           }
         },
-        "bn" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "প্রতি ১২ সেকেন্ডে ক্লিক থেমে যায়।"
+        "bn": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "নিজের গতিতে স্থির তাল ধরে রাখুন।"
           }
         },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "The click drops out every 12 seconds."
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Keep a steady beat at your own pace."
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "El clic desaparece cada 12 segundos."
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mantén el pulso a tu ritmo."
           }
         },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Le clic s’efface toutes les 12 secondes."
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Garde le tempo, à ton rythme."
           }
         },
-        "hi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "हर 12 सेकंड में क्लिक रुक जाता है।"
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "अपनी गति से स्थिर ताल बनाए रखें।"
           }
         },
-        "id" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Klik menghilang setiap 12 detik."
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Jaga ketukan stabil sesuai ritmemu."
           }
         },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "O clique some a cada 12 segundos."
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mantenha o ritmo no seu próprio tempo."
           }
         },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Щелчок пропадает каждые 12 секунд."
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Сохраняйте ровный ритм в своём темпе."
           }
         },
-        "ur" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ہر ۱۲ سیکنڈ بعد کلک رک جاتا ہے۔"
+        "ur": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "اپنی رفتار سے تال برقرار رکھیں۔"
           }
         },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "每隔 12 秒静音一次。"
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "按自己的节奏保持稳定拍点。"
           }
         }
       }
     },
-    "settings.haptics" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "الاهتزاز"
+    "mode.ramp": {
+      "extractionState": "stale",
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "متصاعد"
           }
         },
-        "bn" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "কম্পন"
+        "bn": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ক্রমবর্ধমান"
           }
         },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Haptics"
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ramp"
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Vibración"
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Progresivo"
           }
         },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Vibrations"
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Progressif"
           }
         },
-        "hi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "कंपन"
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "तेज़ होता हुआ"
           }
         },
-        "id" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Getaran"
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bertahap"
           }
         },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Vibrações"
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Progressivo"
           }
         },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Вибрация"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ускорение"
           }
         },
-        "ur" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ارتعاش"
+        "ur": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "رفتہ رفتہ تیز"
           }
         },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "触感反馈"
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "渐快"
           }
         }
       }
     },
-    "settings.hapticsPreview" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "تنبض الموجة مع كل نبضة لمسية."
+    "mode.ramp.badge": {
+      "extractionState": "stale",
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "+٤/د"
           }
         },
-        "bn" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "প্রতিটি হ্যাপটিক বিটে তরঙ্গ স্পন্দিত হয়।"
+        "bn": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "+৪/মিনিট"
           }
         },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "The waveform pulses with each haptic beat."
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "+4/MIN"
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "La onda pulsa con cada vibración."
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "+4/MIN"
           }
         },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "La forme d’onde pulse à chaque vibration."
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "+4/MIN"
           }
         },
-        "hi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "हर हैप्टिक बीट पर तरंग चमकती है।"
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "+4/मिनट"
           }
         },
-        "id" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Gelombang berdenyut pada setiap ketukan haptik."
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "+4/MNT"
           }
         },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "A forma de onda pulsa a cada vibração."
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "+4/MIN"
           }
         },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Волна пульсирует при каждом тактильном сигнале."
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "+4/МИН"
           }
         },
-        "ur" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ہر ہیپٹک بیٹ پر موج حرکت کرے گی۔"
+        "ur": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "+۴/منٹ"
           }
         },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "每次触觉节拍时，波形都会闪动。"
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "+4/分"
           }
         }
       }
     },
-    "settings.sound" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "الصوت"
+    "mode.ramp.description": {
+      "extractionState": "stale",
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "تزداد السرعة كل دقيقة."
           }
         },
-        "bn" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "শব্দ"
+        "bn": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "প্রতি মিনিটে গতি বাড়ে।"
           }
         },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sound"
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The tempo speeds up every minute."
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sonido"
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El tempo acelera cada minuto."
           }
         },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Son"
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Le tempo accélère chaque minute."
           }
         },
-        "hi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ध्वनि"
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "हर मिनट गति बढ़ती है।"
           }
         },
-        "id" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Suara"
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tempo bertambah setiap menit."
           }
         },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Som"
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "O andamento acelera a cada minuto."
           }
         },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Звук"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Темп растёт каждую минуту."
           }
         },
-        "ur" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "آواز"
+        "ur": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ہر منٹ رفتار بڑھتی ہے۔"
           }
         },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "声音"
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "每分钟加快一次。"
           }
         }
       }
     },
-    "settings.title" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "الإعدادات"
+    "mode.silence": {
+      "extractionState": "stale",
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "صمت"
           }
         },
-        "bn" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "সেটিংস"
+        "bn": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "নীরবতা"
           }
         },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "SETTINGS"
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Silence"
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "AJUSTES"
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Silencio"
           }
         },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "RÉGLAGES"
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Silence"
           }
         },
-        "hi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "सेटिंग्स"
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "मौन"
           }
         },
-        "id" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "PENGATURAN"
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hening"
           }
         },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "AJUSTES"
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Silêncio"
           }
         },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "НАСТРОЙКИ"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Тишина"
           }
         },
-        "ur" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ترتیبات"
+        "ur": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "خاموشی"
           }
         },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "设置"
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "静默"
           }
         }
       }
     },
-    "training.title" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "تدريب"
+    "mode.silence.badge": {
+      "extractionState": "stale",
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "١٢/١٢"
           }
         },
-        "bn" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "অনুশীলন"
+        "bn": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "১২/১২"
           }
         },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "PRACTICE"
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "12/12"
           }
         },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "PRÁCTICA"
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "12/12"
           }
         },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ENTRAÎNEMENT"
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "12/12"
           }
         },
-        "hi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "अभ्यास"
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "12/12"
           }
         },
-        "id" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "LATIHAN"
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "12/12"
           }
         },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "PRÁTICA"
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "12/12"
           }
         },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ТРЕНИРОВКА"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "12/12"
           }
         },
-        "ur" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "مشق"
+        "ur": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "۱۲/۱۲"
           }
         },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "节奏练习"
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "12/12"
+          }
+        }
+      }
+    },
+    "mode.silence.description": {
+      "extractionState": "stale",
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "يتوقف الصوت كل ١٢ ثانية."
+          }
+        },
+        "bn": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "প্রতি ১২ সেকেন্ডে ক্লিক থেমে যায়।"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The click drops out every 12 seconds."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El clic desaparece cada 12 segundos."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Le clic s’efface toutes les 12 secondes."
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "हर 12 सेकंड में क्लिक रुक जाता है।"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Klik menghilang setiap 12 detik."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "O clique some a cada 12 segundos."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Щелчок пропадает каждые 12 секунд."
+          }
+        },
+        "ur": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ہر ۱۲ سیکنڈ بعد کلک رک جاتا ہے۔"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "每隔 12 秒静音一次。"
+          }
+        }
+      }
+    },
+    "settings.haptics": {
+      "extractionState": "stale",
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "الاهتزاز"
+          }
+        },
+        "bn": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "কম্পন"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Haptics"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vibración"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vibrations"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "कंपन"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Getaran"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vibrações"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Вибрация"
+          }
+        },
+        "ur": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ارتعاش"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "触感反馈"
+          }
+        }
+      }
+    },
+    "settings.hapticsPreview": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Visual preview of haptics."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aperçu visuel des vibrations."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vista previa de las vibraciones."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "触觉反馈的视觉预览。"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "हैप्टिक्स का दृश्य पूर्वावलोकन।"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "معاينة مرئية للاهتزازات."
+          }
+        },
+        "bn": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "হ্যাপটিক প্রতিক্রিয়ার দৃশ্যমান পূর্বরূপ।"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Prévia visual das vibrações."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Визуальный показ вибраций."
+          }
+        },
+        "ur": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "وائبریشن کا بصری پیش منظر۔"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pratinjau visual getaran."
+          }
+        }
+      }
+    },
+    "settings.sound": {
+      "extractionState": "stale",
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "الصوت"
+          }
+        },
+        "bn": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "শব্দ"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sound"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sonido"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Son"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ध्वनि"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Suara"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Som"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Звук"
+          }
+        },
+        "ur": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "آواز"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "声音"
+          }
+        }
+      }
+    },
+    "settings.title": {
+      "extractionState": "stale",
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "الإعدادات"
+          }
+        },
+        "bn": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "সেটিংস"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "SETTINGS"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "AJUSTES"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "RÉGLAGES"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "सेटिंग्स"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "PENGATURAN"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "AJUSTES"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "НАСТРОЙКИ"
+          }
+        },
+        "ur": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ترتیبات"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "设置"
+          }
+        }
+      }
+    },
+    "training.title": {
+      "extractionState": "stale",
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "تدريب"
+          }
+        },
+        "bn": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "অনুশীলন"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "PRACTICE"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "PRÁCTICA"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ENTRAÎNEMENT"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "अभ्यास"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "LATIHAN"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "PRÁTICA"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ТРЕНИРОВКА"
+          }
+        },
+        "ur": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "مشق"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "节奏练习"
           }
         }
       }
     }
   },
-  "version" : "1.0"
+  "version": "1.0"
 }

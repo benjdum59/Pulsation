@@ -78,6 +78,7 @@ enum DesignSystem {
         static let settingsIconWidth: CGFloat = 24
         static let settingsHorizontalPadding: CGFloat = 12
         static let settingsHintFont: CGFloat = 9
+        static let settingsHintLineLimit = 2
     }
 
     enum Opacity {

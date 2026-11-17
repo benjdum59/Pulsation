@@ -178,7 +178,10 @@ struct HomeView: View {
             Text(L10n.settingsHapticsPreview)
                 .font(.system(size: DesignSystem.Layout.settingsHintFont))
                 .foregroundStyle(.secondary)
+                .lineLimit(DesignSystem.Layout.settingsHintLineLimit)
                 .multilineTextAlignment(.center)
+                .frame(maxWidth: .infinity)
+                .fixedSize(horizontal: false, vertical: true)
         }
         .padding(.horizontal, DesignSystem.Layout.settingsHorizontalPadding)
     }
