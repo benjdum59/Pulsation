@@ -1,9 +1,8 @@
 {
   "sourceLanguage": "en",
   "strings": {
-    "%@": {},
     "action.pause": {
-      "extractionState": "stale",
+      "extractionState": "manual",
       "localizations": {
         "ar": {
           "stringUnit": {
@@ -74,7 +73,7 @@
       }
     },
     "action.start": {
-      "extractionState": "stale",
+      "extractionState": "manual",
       "localizations": {
         "ar": {
           "stringUnit": {
@@ -145,7 +144,7 @@
       }
     },
     "metronome.bpmUnit": {
-      "extractionState": "stale",
+      "extractionState": "manual",
       "localizations": {
         "ar": {
           "stringUnit": {
@@ -216,7 +215,7 @@
       }
     },
     "metronome.status.playing": {
-      "extractionState": "stale",
+      "extractionState": "manual",
       "localizations": {
         "ar": {
           "stringUnit": {
@@ -287,7 +286,7 @@
       }
     },
     "metronome.status.ready": {
-      "extractionState": "stale",
+      "extractionState": "manual",
       "localizations": {
         "ar": {
           "stringUnit": {
@@ -358,7 +357,7 @@
       }
     },
     "metronome.tapTempoHint": {
-      "extractionState": "stale",
+      "extractionState": "manual",
       "localizations": {
         "ar": {
           "stringUnit": {
@@ -429,7 +428,7 @@
       }
     },
     "mode.free": {
-      "extractionState": "stale",
+      "extractionState": "manual",
       "localizations": {
         "ar": {
           "stringUnit": {
@@ -500,7 +499,7 @@
       }
     },
     "mode.free.description": {
-      "extractionState": "stale",
+      "extractionState": "manual",
       "localizations": {
         "ar": {
           "stringUnit": {
@@ -571,7 +570,7 @@
       }
     },
     "mode.ramp": {
-      "extractionState": "stale",
+      "extractionState": "manual",
       "localizations": {
         "ar": {
           "stringUnit": {
@@ -642,7 +641,7 @@
       }
     },
     "mode.ramp.badge": {
-      "extractionState": "stale",
+      "extractionState": "manual",
       "localizations": {
         "ar": {
           "stringUnit": {
@@ -713,7 +712,7 @@
       }
     },
     "mode.ramp.description": {
-      "extractionState": "stale",
+      "extractionState": "manual",
       "localizations": {
         "ar": {
           "stringUnit": {
@@ -784,7 +783,7 @@
       }
     },
     "mode.silence": {
-      "extractionState": "stale",
+      "extractionState": "manual",
       "localizations": {
         "ar": {
           "stringUnit": {
@@ -855,7 +854,7 @@
       }
     },
     "mode.silence.badge": {
-      "extractionState": "stale",
+      "extractionState": "manual",
       "localizations": {
         "ar": {
           "stringUnit": {
@@ -926,7 +925,7 @@
       }
     },
     "mode.silence.description": {
-      "extractionState": "stale",
+      "extractionState": "manual",
       "localizations": {
         "ar": {
           "stringUnit": {
@@ -997,7 +996,7 @@
       }
     },
     "settings.haptics": {
-      "extractionState": "stale",
+      "extractionState": "manual",
       "localizations": {
         "ar": {
           "stringUnit": {
@@ -1068,7 +1067,7 @@
       }
     },
     "settings.hapticsPreview": {
-      "extractionState": "stale",
+      "extractionState": "manual",
       "localizations": {
         "en": {
           "stringUnit": {
@@ -1139,7 +1138,7 @@
       }
     },
     "settings.sound": {
-      "extractionState": "stale",
+      "extractionState": "manual",
       "localizations": {
         "ar": {
           "stringUnit": {
@@ -1210,7 +1209,7 @@
       }
     },
     "settings.title": {
-      "extractionState": "stale",
+      "extractionState": "manual",
       "localizations": {
         "ar": {
           "stringUnit": {
@@ -1281,7 +1280,7 @@
       }
     },
     "training.title": {
-      "extractionState": "stale",
+      "extractionState": "manual",
       "localizations": {
         "ar": {
           "stringUnit": {

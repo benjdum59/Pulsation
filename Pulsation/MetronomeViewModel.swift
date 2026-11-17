@@ -19,8 +19,9 @@ final class MetronomeViewModel: ObservableObject {
     private var phaseStart = Date()
     private var baseBPM = DesignSystem.Tempo.initialBPM
     private var lastTap = Date.distantPast
-    private var audioPlayer: AVAudioPlayer?
+    private let audioPlayer = AudioClickPlayer()
     private var audioSessionIsReady = false
+    private var audioSessionGeneration = 0
 
     enum PracticeMode: CaseIterable, Identifiable {
         case free
@@ -60,12 +61,6 @@ final class MetronomeViewModel: ObservableObject {
         }
         if let savedHapticsPreference = UserDefaults.standard.object(forKey: DesignSystem.Preferences.hapticsEnabledKey) as? Bool {
             isHapticsEnabled = savedHapticsPreference
-        }
-        if let url = Bundle.main.url(
-            forResource: DesignSystem.Assets.metronomeClick,
-            withExtension: DesignSystem.Assets.waveFileExtension
-        ) {
-            audioPlayer = try? AVAudioPlayer(contentsOf: url)
         }
     }
 
@@ -169,14 +164,15 @@ final class MetronomeViewModel: ObservableObject {
                 hapticPulseCount += DesignSystem.Tempo.bpmAdjustmentStep
             }
             if isSoundEnabled, audioSessionIsReady {
-                audioPlayer?.currentTime = DesignSystem.Audio.playbackStartTime
-                audioPlayer?.play()
+                audioPlayer.play(from: DesignSystem.Audio.playbackStartTime)
             }
         }
         beat = (beat + DesignSystem.Tempo.bpmAdjustmentStep) % beatsPerBar
     }
 
     private func activateAudioSession(onReady: (() -> Void)? = nil) {
+        audioSessionGeneration += 1
+        let generation = audioSessionGeneration
         let session = AVAudioSession.sharedInstance()
         do {
             try session.setCategory(.playback, mode: .default, options: [.mixWithOthers])
@@ -188,6 +184,12 @@ final class MetronomeViewModel: ObservableObject {
         session.activate(options: []) { [weak self] activated, _ in
             Task { @MainActor in
                 guard let self else { return }
+                guard self.audioSessionGeneration == generation else {
+                    if activated, (!self.isPlaying || !self.isSoundEnabled) {
+                        self.stopAudioSession()
+                    }
+                    return
+                }
                 let shouldContinue = self.isPlaying && self.isSoundEnabled
                 self.audioSessionIsReady = activated && shouldContinue
                 if shouldContinue {
@@ -200,15 +202,54 @@ final class MetronomeViewModel: ObservableObject {
     }
 
     private func stopAudioSession() {
+        audioSessionGeneration += 1
+        let generation = audioSessionGeneration
         audioSessionIsReady = false
-        audioPlayer?.stop()
-        let session = AVAudioSession.sharedInstance()
-        if #available(watchOS 27.0, *) {
-            session.deactivate(options: []) { _, _ in }
-        } else {
-            DispatchQueue.global(qos: .utility).async {
-                try? session.setActive(false)
+        audioPlayer.stop { [weak self] in
+            Task { @MainActor [weak self] in
+                guard let self,
+                      self.audioSessionGeneration == generation,
+                      !self.isPlaying || !self.isSoundEnabled else { return }
+                let session = AVAudioSession.sharedInstance()
+                if #available(watchOS 27.0, *) {
+                    session.deactivate(options: []) { _, _ in }
+                } else {
+                    DispatchQueue.global(qos: .utility).async {
+                        try? session.setActive(false)
+                    }
+                }
             }
+        }
+    }
+}
+
+private final class AudioClickPlayer: @unchecked Sendable {
+    private let playbackQueue = DispatchQueue(label: DesignSystem.Audio.playbackQueueLabel)
+    private let audioURL = Bundle.main.url(
+        forResource: DesignSystem.Assets.metronomeClick,
+        withExtension: DesignSystem.Assets.waveFileExtension
+    )
+    private var player: AVAudioPlayer?
+
+    init() {
+        playbackQueue.async { [weak self] in
+            guard let self, let audioURL = self.audioURL else { return }
+            self.player = try? AVAudioPlayer(contentsOf: audioURL)
+        }
+    }
+
+    func play(from time: TimeInterval) {
+        playbackQueue.async { [weak self] in
+            guard let player = self?.player else { return }
+            player.currentTime = time
+            player.play()
+        }
+    }
+
+    func stop(completion: @escaping @Sendable () -> Void) {
+        playbackQueue.async { [weak self] in
+            self?.player?.stop()
+            DispatchQueue.main.async(execute: completion)
         }
     }
 }

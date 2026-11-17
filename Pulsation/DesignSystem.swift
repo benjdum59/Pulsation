@@ -27,6 +27,7 @@ enum DesignSystem {
 
     enum Audio {
         static let playbackStartTime: TimeInterval = 0
+        static let playbackQueueLabel = "com.bdt.pulsation.audio-playback"
     }
 
     enum Haptics {
