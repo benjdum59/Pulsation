@@ -28,15 +28,23 @@ enum DesignSystem {
     enum Audio {
         static let playbackStartTime: TimeInterval = 0
         static let playbackQueueLabel = "com.bdt.pulsation.audio-playback"
+        static let defaultVolume = 1.0
+        static let minimumVolume = 0.0
+        static let maximumVolume = 1.0
+        static let volumeStep = 0.05
     }
 
     enum Haptics {
         static let initialPulseCount = 0
+        static let pulseIncrement = 1
+        static let defaultIntensity: HapticIntensity = .medium
     }
 
     enum Preferences {
         static let soundEnabledKey = "metronome.settings.soundEnabled"
+        static let soundVolumeKey = "metronome.settings.soundVolume"
         static let hapticsEnabledKey = "metronome.settings.hapticsEnabled"
+        static let hapticIntensityKey = "metronome.settings.hapticIntensity"
         static let defaultEnabled = true
     }
 
@@ -73,13 +81,16 @@ enum DesignSystem {
         static let startButtonFont: CGFloat = 12
         static let startButtonVerticalPadding: CGFloat = 2
         static let trainingHorizontalPadding: CGFloat = 8
-        static let settingsVerticalSpacing: CGFloat = 18
-        static let settingsRowSpacing: CGFloat = 10
-        static let settingsRowFont: CGFloat = 15
-        static let settingsIconWidth: CGFloat = 24
-        static let settingsHorizontalPadding: CGFloat = 12
-        static let settingsHintFont: CGFloat = 9
-        static let settingsHintLineLimit = 2
+        static let settingsVerticalSpacing: CGFloat = 8
+        static let settingsControlSpacing: CGFloat = 4
+        static let settingsRowSpacing: CGFloat = 8
+        static let settingsRowFont: CGFloat = 13
+        static let settingsVolumeFont: CGFloat = 11
+        static let settingsTestButtonFont: CGFloat = 10
+        static let settingsIconWidth: CGFloat = 22
+        static let settingsHorizontalPadding: CGFloat = 10
+        static let settingsHintFont: CGFloat = 8
+        static let settingsHintLineLimit = 3
     }
 
     enum Opacity {
@@ -141,6 +152,12 @@ enum L10n {
     static let actionPause = String(localized: "action.pause")
     static let settingsTitle = String(localized: "settings.title")
     static let settingsSound = String(localized: "settings.sound")
+    static let settingsSoundLevel = String(localized: "settings.soundLevel")
     static let settingsHaptics = String(localized: "settings.haptics")
-    static let settingsHapticsPreview = String(localized: "settings.hapticsPreview")
+    static let settingsTestHaptics = String(localized: "settings.hapticsTest")
+    static let settingsHapticIntensity = String(localized: "settings.hapticIntensity")
+    static let settingsHapticsIntensityHint = String(localized: "settings.hapticsIntensityHint")
+    static let hapticIntensityLow = String(localized: "haptics.intensity.low")
+    static let hapticIntensityMedium = String(localized: "haptics.intensity.medium")
+    static let hapticIntensityHigh = String(localized: "haptics.intensity.high")
 }

@@ -2,6 +2,30 @@ import AVFoundation
 import Combine
 import WatchKit
 
+enum HapticIntensity: String, CaseIterable, Identifiable {
+    case low
+    case medium
+    case high
+
+    var id: Self { self }
+
+    var title: String {
+        switch self {
+        case .low: L10n.hapticIntensityLow
+        case .medium: L10n.hapticIntensityMedium
+        case .high: L10n.hapticIntensityHigh
+        }
+    }
+
+    var watchKitType: WKHapticType {
+        switch self {
+        case .low: .click
+        case .medium: .start
+        case .high: .directionUp
+        }
+    }
+}
+
 @MainActor
 final class MetronomeViewModel: ObservableObject {
     @Published var bpm = DesignSystem.Tempo.initialBPM
@@ -12,7 +36,9 @@ final class MetronomeViewModel: ObservableObject {
     @Published var mode: PracticeMode = .free
     @Published private(set) var elapsedSeconds = DesignSystem.Tempo.initialElapsedSeconds
     @Published private(set) var isSoundEnabled = DesignSystem.Preferences.defaultEnabled
+    @Published private(set) var soundVolume = DesignSystem.Audio.defaultVolume
     @Published private(set) var isHapticsEnabled = DesignSystem.Preferences.defaultEnabled
+    @Published private(set) var selectedHapticIntensity = DesignSystem.Haptics.defaultIntensity
 
     private var timer: Timer?
     private var lastTick = Date.distantPast
@@ -59,9 +85,20 @@ final class MetronomeViewModel: ObservableObject {
         if let savedSoundPreference = UserDefaults.standard.object(forKey: DesignSystem.Preferences.soundEnabledKey) as? Bool {
             isSoundEnabled = savedSoundPreference
         }
+        if let savedSoundVolume = UserDefaults.standard.object(forKey: DesignSystem.Preferences.soundVolumeKey) as? Double {
+            soundVolume = min(
+                DesignSystem.Audio.maximumVolume,
+                max(DesignSystem.Audio.minimumVolume, savedSoundVolume)
+            )
+        }
         if let savedHapticsPreference = UserDefaults.standard.object(forKey: DesignSystem.Preferences.hapticsEnabledKey) as? Bool {
             isHapticsEnabled = savedHapticsPreference
         }
+        if let savedHapticIntensity = UserDefaults.standard.string(forKey: DesignSystem.Preferences.hapticIntensityKey),
+           let intensity = HapticIntensity(rawValue: savedHapticIntensity) {
+            selectedHapticIntensity = intensity
+        }
+        audioPlayer.setVolume(Float(soundVolume))
     }
 
     func start() {
@@ -118,10 +155,33 @@ final class MetronomeViewModel: ObservableObject {
         }
     }
 
+    func setSoundVolume(_ volume: Double) {
+        let clampedVolume = min(
+            DesignSystem.Audio.maximumVolume,
+            max(DesignSystem.Audio.minimumVolume, volume)
+        )
+        guard soundVolume != clampedVolume else { return }
+        soundVolume = clampedVolume
+        UserDefaults.standard.set(clampedVolume, forKey: DesignSystem.Preferences.soundVolumeKey)
+        audioPlayer.setVolume(Float(clampedVolume))
+    }
+
     func setHapticsEnabled(_ enabled: Bool) {
         guard isHapticsEnabled != enabled else { return }
         isHapticsEnabled = enabled
         UserDefaults.standard.set(enabled, forKey: DesignSystem.Preferences.hapticsEnabledKey)
+    }
+
+    func setHapticIntensity(_ intensity: HapticIntensity) {
+        guard selectedHapticIntensity != intensity else { return }
+        selectedHapticIntensity = intensity
+        UserDefaults.standard.set(intensity.rawValue, forKey: DesignSystem.Preferences.hapticIntensityKey)
+    }
+
+    func testHaptics() {
+        guard isHapticsEnabled else { return }
+        WKInterfaceDevice.current().play(selectedHapticIntensity.watchKitType)
+        hapticPulseCount += DesignSystem.Haptics.pulseIncrement
     }
 
     func tapTempo() {
@@ -160,8 +220,8 @@ final class MetronomeViewModel: ObservableObject {
 
         if shouldClick {
             if isHapticsEnabled {
-                WKInterfaceDevice.current().play(.click)
-                hapticPulseCount += DesignSystem.Tempo.bpmAdjustmentStep
+                WKInterfaceDevice.current().play(selectedHapticIntensity.watchKitType)
+                hapticPulseCount += DesignSystem.Haptics.pulseIncrement
             }
             if isSoundEnabled, audioSessionIsReady {
                 audioPlayer.play(from: DesignSystem.Audio.playbackStartTime)
@@ -243,6 +303,12 @@ private final class AudioClickPlayer: @unchecked Sendable {
             guard let player = self?.player else { return }
             player.currentTime = time
             player.play()
+        }
+    }
+
+    func setVolume(_ volume: Float) {
+        playbackQueue.async { [weak self] in
+            self?.player?.volume = volume
         }
     }
 
