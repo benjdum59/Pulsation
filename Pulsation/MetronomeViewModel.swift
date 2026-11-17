@@ -20,6 +20,7 @@ final class MetronomeViewModel: ObservableObject {
     private var baseBPM = DesignSystem.Tempo.initialBPM
     private var lastTap = Date.distantPast
     private var audioPlayer: AVAudioPlayer?
+    private var audioSessionIsReady = false
 
     enum PracticeMode: CaseIterable, Identifiable {
         case free
@@ -65,7 +66,6 @@ final class MetronomeViewModel: ObservableObject {
             withExtension: DesignSystem.Assets.waveFileExtension
         ) {
             audioPlayer = try? AVAudioPlayer(contentsOf: url)
-            audioPlayer?.prepareToPlay()
         }
     }
 
@@ -78,7 +78,17 @@ final class MetronomeViewModel: ObservableObject {
         lastTick = .distantPast
 
         isPlaying = true
-        updateAudioSession()
+        if isSoundEnabled {
+            activateAudioSession { [weak self] in self?.beginPulseTimer() }
+        } else {
+            beginPulseTimer()
+        }
+    }
+
+    private func beginPulseTimer() {
+        guard isPlaying, timer == nil else { return }
+        phaseStart = Date()
+        lastTick = .distantPast
         let pulseTimer = Timer(timeInterval: DesignSystem.Timing.viewModelTickInterval, repeats: true) { [weak self] _ in
             Task { @MainActor in self?.pulse() }
         }
@@ -90,7 +100,7 @@ final class MetronomeViewModel: ObservableObject {
         timer?.invalidate()
         timer = nil
         isPlaying = false
-        updateAudioSession()
+        stopAudioSession()
     }
 
     func adjustTempo(by amount: Int) {
@@ -105,7 +115,12 @@ final class MetronomeViewModel: ObservableObject {
         guard isSoundEnabled != enabled else { return }
         isSoundEnabled = enabled
         UserDefaults.standard.set(enabled, forKey: DesignSystem.Preferences.soundEnabledKey)
-        if isPlaying { updateAudioSession() }
+        guard isPlaying else { return }
+        if enabled {
+            activateAudioSession()
+        } else {
+            stopAudioSession()
+        }
     }
 
     func setHapticsEnabled(_ enabled: Bool) {
@@ -153,7 +168,7 @@ final class MetronomeViewModel: ObservableObject {
                 WKInterfaceDevice.current().play(.click)
                 hapticPulseCount += DesignSystem.Tempo.bpmAdjustmentStep
             }
-            if isSoundEnabled {
+            if isSoundEnabled, audioSessionIsReady {
                 audioPlayer?.currentTime = DesignSystem.Audio.playbackStartTime
                 audioPlayer?.play()
             }
@@ -161,15 +176,39 @@ final class MetronomeViewModel: ObservableObject {
         beat = (beat + DesignSystem.Tempo.bpmAdjustmentStep) % beatsPerBar
     }
 
-    private func updateAudioSession() {
-        guard isPlaying, isSoundEnabled else {
-            audioPlayer?.stop()
-            try? AVAudioSession.sharedInstance().setActive(false)
+    private func activateAudioSession(onReady: (() -> Void)? = nil) {
+        let session = AVAudioSession.sharedInstance()
+        do {
+            try session.setCategory(.playback, mode: .default, options: [.mixWithOthers])
+        } catch {
+            audioSessionIsReady = false
+            onReady?()
             return
         }
-        do {
-            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: [.mixWithOthers])
-            try AVAudioSession.sharedInstance().setActive(true)
-        } catch { }
+        session.activate(options: []) { [weak self] activated, _ in
+            Task { @MainActor in
+                guard let self else { return }
+                let shouldContinue = self.isPlaying && self.isSoundEnabled
+                self.audioSessionIsReady = activated && shouldContinue
+                if shouldContinue {
+                    onReady?()
+                } else if activated {
+                    self.stopAudioSession()
+                }
+            }
+        }
+    }
+
+    private func stopAudioSession() {
+        audioSessionIsReady = false
+        audioPlayer?.stop()
+        let session = AVAudioSession.sharedInstance()
+        if #available(watchOS 27.0, *) {
+            session.deactivate(options: []) { _, _ in }
+        } else {
+            DispatchQueue.global(qos: .utility).async {
+                try? session.setActive(false)
+            }
+        }
     }
 }
