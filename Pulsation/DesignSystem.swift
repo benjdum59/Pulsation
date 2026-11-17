@@ -22,7 +22,9 @@ enum DesignSystem {
 
     enum Timing {
         static let secondsPerMinute = 60.0
-        static let viewModelTickInterval: TimeInterval = 0.015
+        static let nanosecondsPerMinute = 60_000_000_000.0
+        static let hapticInteractionSeparation = Duration.milliseconds(200)
+        static let pulseSleepTolerance = Duration.milliseconds(2)
     }
 
     enum Audio {
@@ -37,6 +39,10 @@ enum DesignSystem {
     enum Haptics {
         static let initialPulseCount = 0
         static let pulseIncrement = 1
+        static let firstArcIndex = 1
+        static let lowArcCount = 1
+        static let mediumArcCount = 2
+        static let highArcCount = 3
         static let defaultIntensity: HapticIntensity = .medium
     }
 
@@ -87,10 +93,22 @@ enum DesignSystem {
         static let settingsRowFont: CGFloat = 13
         static let settingsVolumeFont: CGFloat = 11
         static let settingsTestButtonFont: CGFloat = 10
+        static let settingsIntensityChoiceFont: CGFloat = 9
+        static let settingsIntensityChoicesSpacing: CGFloat = 4
+        static let settingsIntensityIconLabelSpacing: CGFloat = 2
+        static let settingsIntensityChoiceMinimumHeight: CGFloat = 50
         static let settingsIconWidth: CGFloat = 22
         static let settingsHorizontalPadding: CGFloat = 10
         static let settingsHintFont: CGFloat = 8
         static let settingsHintLineLimit = 3
+        static let hapticIconSize: CGFloat = 28
+        static let hapticIconDotDiameter: CGFloat = 4
+        static let hapticIconStrokeWidth: CGFloat = 1.5
+        static let hapticIconFirstArcRadius: CGFloat = 6
+        static let hapticIconArcRadiusStep: CGFloat = 4.5
+        static let hapticArcHorizontalRatio: CGFloat = 0.75
+        static let hapticArcEndpointHeightRatio: CGFloat = 0.35
+        static let shapeCenterDivisor: CGFloat = 2
     }
 
     enum Opacity {

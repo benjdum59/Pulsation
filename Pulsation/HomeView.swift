@@ -144,99 +144,170 @@ struct HomeView: View {
     }
 
     private var settingsView: some View {
-        NavigationStack {
-            ScrollView {
-                VStack(spacing: DesignSystem.Layout.settingsVerticalSpacing) {
-                    Text(L10n.settingsTitle)
-                        .font(.system(size: DesignSystem.Layout.modeTitleFont, weight: .semibold, design: DesignSystem.Typography.rounded))
+        ScrollView {
+            VStack(spacing: DesignSystem.Layout.settingsVerticalSpacing) {
+                Text(L10n.settingsTitle)
+                    .font(.system(size: DesignSystem.Layout.modeTitleFont, weight: .semibold, design: DesignSystem.Typography.rounded))
 
-                    Toggle(isOn: Binding(
-                        get: { viewModel.isSoundEnabled },
-                        set: { viewModel.setSoundEnabled($0) }
-                    )) {
-                        HStack(spacing: DesignSystem.Layout.settingsRowSpacing) {
-                            Image(systemName: DesignSystem.Icons.sound)
-                                .frame(width: DesignSystem.Layout.settingsIconWidth)
-                            Text(L10n.settingsSound)
-                                .font(.system(size: DesignSystem.Layout.settingsRowFont, weight: .medium))
-                        }
+                Toggle(isOn: Binding(
+                    get: { viewModel.isSoundEnabled },
+                    set: { viewModel.setSoundEnabled($0) }
+                )) {
+                    HStack(spacing: DesignSystem.Layout.settingsRowSpacing) {
+                        Image(systemName: DesignSystem.Icons.sound)
+                            .frame(width: DesignSystem.Layout.settingsIconWidth)
+                        Text(L10n.settingsSound)
+                            .font(.system(size: DesignSystem.Layout.settingsRowFont, weight: .medium))
                     }
-                    .tint(DesignSystem.Palette.accent)
-
-                    VStack(alignment: .leading, spacing: DesignSystem.Layout.settingsControlSpacing) {
-                        HStack(spacing: DesignSystem.Layout.settingsRowSpacing) {
-                            Image(systemName: DesignSystem.Icons.sound)
-                                .frame(width: DesignSystem.Layout.settingsIconWidth)
-                            Text(L10n.settingsSoundLevel)
-                                .font(.system(size: DesignSystem.Layout.settingsVolumeFont, weight: .medium))
-                            Spacer(minLength: DesignSystem.Layout.settingsControlSpacing)
-                            Text(viewModel.soundVolume, format: .percent.precision(.fractionLength(0)))
-                                .font(.system(size: DesignSystem.Layout.settingsVolumeFont, weight: .semibold))
-                                .monospacedDigit()
-                        }
-
-                        Slider(
-                            value: Binding(
-                                get: { viewModel.soundVolume },
-                                set: { viewModel.setSoundVolume($0) }
-                            ),
-                            in: DesignSystem.Audio.minimumVolume...DesignSystem.Audio.maximumVolume,
-                            step: DesignSystem.Audio.volumeStep
-                        )
-                        .tint(DesignSystem.Palette.accent)
-                        .disabled(!viewModel.isSoundEnabled)
-                    }
-
-                    Toggle(isOn: Binding(
-                        get: { viewModel.isHapticsEnabled },
-                        set: { viewModel.setHapticsEnabled($0) }
-                    )) {
-                        HStack(spacing: DesignSystem.Layout.settingsRowSpacing) {
-                            Image(systemName: DesignSystem.Icons.haptics)
-                                .frame(width: DesignSystem.Layout.settingsIconWidth)
-                                .symbolEffect(.pulse, options: .nonRepeating, value: viewModel.hapticPulseCount)
-                            Text(L10n.settingsHaptics)
-                                .font(.system(size: DesignSystem.Layout.settingsRowFont, weight: .medium))
-                        }
-                    }
-                    .tint(DesignSystem.Palette.accent)
-
-                    Picker(L10n.settingsHapticIntensity, selection: Binding(
-                        get: { viewModel.selectedHapticIntensity },
-                        set: { viewModel.setHapticIntensity($0) }
-                    )) {
-                        ForEach(HapticIntensity.allCases) { intensity in
-                            Text(intensity.title).tag(intensity)
-                        }
-                    }
-                    .pickerStyle(.navigationLink)
-                    .onChange(of: viewModel.selectedHapticIntensity) { _, _ in
-                        viewModel.testHaptics()
-                    }
-                    .disabled(!viewModel.isHapticsEnabled)
-
-                    Button(L10n.settingsTestHaptics) {
-                        viewModel.testHaptics()
-                    }
-                    .font(.system(size: DesignSystem.Layout.settingsTestButtonFont, weight: .medium))
-                    .buttonStyle(.bordered)
-                    .disabled(!viewModel.isHapticsEnabled)
-
-                    Text(L10n.settingsHapticsIntensityHint)
-                        .font(.system(size: DesignSystem.Layout.settingsHintFont))
-                        .foregroundStyle(.secondary)
-                        .lineLimit(DesignSystem.Layout.settingsHintLineLimit)
-                        .multilineTextAlignment(.center)
-                        .frame(maxWidth: .infinity)
-                        .fixedSize(horizontal: false, vertical: true)
                 }
-                .padding(.horizontal, DesignSystem.Layout.settingsHorizontalPadding)
+                .tint(DesignSystem.Palette.accent)
+
+                VStack(alignment: .leading, spacing: DesignSystem.Layout.settingsControlSpacing) {
+                    HStack(spacing: DesignSystem.Layout.settingsRowSpacing) {
+                        Image(systemName: DesignSystem.Icons.sound)
+                            .frame(width: DesignSystem.Layout.settingsIconWidth)
+                        Text(L10n.settingsSoundLevel)
+                            .font(.system(size: DesignSystem.Layout.settingsVolumeFont, weight: .medium))
+                        Spacer(minLength: DesignSystem.Layout.settingsControlSpacing)
+                        Text(viewModel.soundVolume, format: .percent.precision(.fractionLength(0)))
+                            .font(.system(size: DesignSystem.Layout.settingsVolumeFont, weight: .semibold))
+                            .monospacedDigit()
+                    }
+
+                    Slider(
+                        value: Binding(
+                            get: { viewModel.soundVolume },
+                            set: { viewModel.setSoundVolume($0) }
+                        ),
+                        in: DesignSystem.Audio.minimumVolume...DesignSystem.Audio.maximumVolume,
+                        step: DesignSystem.Audio.volumeStep
+                    )
+                    .tint(DesignSystem.Palette.accent)
+                    .disabled(!viewModel.isSoundEnabled)
+                }
+
+                Toggle(isOn: Binding(
+                    get: { viewModel.isHapticsEnabled },
+                    set: { viewModel.setHapticsEnabled($0) }
+                )) {
+                    HStack(spacing: DesignSystem.Layout.settingsRowSpacing) {
+                        Image(systemName: DesignSystem.Icons.haptics)
+                            .frame(width: DesignSystem.Layout.settingsIconWidth)
+                            .symbolEffect(.pulse, options: .nonRepeating, value: viewModel.hapticPulseCount)
+                        Text(L10n.settingsHaptics)
+                            .font(.system(size: DesignSystem.Layout.settingsRowFont, weight: .medium))
+                    }
+                }
+                .tint(DesignSystem.Palette.accent)
+
+                VStack(spacing: DesignSystem.Layout.settingsControlSpacing) {
+                    Text(L10n.settingsHapticIntensity)
+                        .font(.system(size: DesignSystem.Layout.settingsVolumeFont, weight: .medium))
+
+                    HStack(spacing: DesignSystem.Layout.settingsIntensityChoicesSpacing) {
+                        ForEach(HapticIntensity.allCases) { intensity in
+                            Button {
+                                viewModel.selectHapticIntensity(intensity)
+                            } label: {
+                                VStack(spacing: DesignSystem.Layout.settingsIntensityIconLabelSpacing) {
+                                    HapticIntensityIcon(intensity: intensity)
+                                    Text(intensity.title)
+                                        .font(.system(size: DesignSystem.Layout.settingsIntensityChoiceFont, weight: .semibold))
+                                }
+                                .frame(maxWidth: .infinity)
+                                .frame(minHeight: DesignSystem.Layout.settingsIntensityChoiceMinimumHeight)
+                            }
+                            .buttonStyle(.borderedProminent)
+                            .tint(
+                                viewModel.selectedHapticIntensity == intensity
+                                    ? DesignSystem.Palette.accent
+                                    : DesignSystem.Palette.secondaryControl
+                            )
+                            .disabled(!viewModel.isHapticsEnabled || viewModel.isPlaying)
+                        }
+                    }
+                }
+
+                Button(L10n.settingsTestHaptics) {
+                    viewModel.testHaptics()
+                }
+                .font(.system(size: DesignSystem.Layout.settingsTestButtonFont, weight: .medium))
+                .buttonStyle(.bordered)
+                .disabled(!viewModel.isHapticsEnabled || viewModel.isPlaying)
+
+                Text(L10n.settingsHapticsIntensityHint)
+                    .font(.system(size: DesignSystem.Layout.settingsHintFont))
+                    .foregroundStyle(.secondary)
+                    .lineLimit(DesignSystem.Layout.settingsHintLineLimit)
+                    .multilineTextAlignment(.center)
+                    .frame(maxWidth: .infinity)
+                    .fixedSize(horizontal: false, vertical: true)
             }
+            .padding(.horizontal, DesignSystem.Layout.settingsHorizontalPadding)
         }
     }
 
     private func beatColor(isDownbeat: Bool, isActive: Bool) -> Color {
         if isActive { return DesignSystem.Palette.accent }
         return isDownbeat ? DesignSystem.Palette.inactiveDownbeat : DesignSystem.Palette.inactiveBeat
+    }
+}
+
+private struct HapticIntensityIcon: View {
+    let intensity: HapticIntensity
+
+    var body: some View {
+        ZStack {
+            HapticIntensityArcs(arcCount: intensity.arcCount)
+                .stroke(
+                    style: StrokeStyle(
+                        lineWidth: DesignSystem.Layout.hapticIconStrokeWidth,
+                        lineCap: .round
+                    )
+                )
+
+            Circle()
+                .frame(
+                    width: DesignSystem.Layout.hapticIconDotDiameter,
+                    height: DesignSystem.Layout.hapticIconDotDiameter
+                )
+                .position(
+                    x: DesignSystem.Layout.hapticIconSize / DesignSystem.Layout.shapeCenterDivisor,
+                    y: DesignSystem.Layout.hapticIconSize - DesignSystem.Layout.hapticIconDotDiameter / DesignSystem.Layout.shapeCenterDivisor
+                )
+        }
+        .frame(
+            width: DesignSystem.Layout.hapticIconSize,
+            height: DesignSystem.Layout.hapticIconSize
+        )
+        .accessibilityHidden(true)
+    }
+}
+
+private struct HapticIntensityArcs: Shape {
+    let arcCount: Int
+
+    func path(in rect: CGRect) -> Path {
+        var path = Path()
+        let center = CGPoint(
+            x: rect.midX,
+            y: rect.maxY - DesignSystem.Layout.hapticIconDotDiameter / DesignSystem.Layout.shapeCenterDivisor
+        )
+
+        let endArcIndex = arcCount + DesignSystem.Haptics.firstArcIndex
+        for arcIndex in DesignSystem.Haptics.firstArcIndex..<endArcIndex {
+            let radius = DesignSystem.Layout.hapticIconFirstArcRadius
+                + CGFloat(arcIndex - DesignSystem.Haptics.firstArcIndex) * DesignSystem.Layout.hapticIconArcRadiusStep
+            let halfWidth = radius * DesignSystem.Layout.hapticArcHorizontalRatio
+            let endpointY = center.y - radius * DesignSystem.Layout.hapticArcEndpointHeightRatio
+
+            path.move(to: CGPoint(x: center.x - halfWidth, y: endpointY))
+            path.addQuadCurve(
+                to: CGPoint(x: center.x + halfWidth, y: endpointY),
+                control: CGPoint(x: center.x, y: center.y - radius)
+            )
+        }
+
+        return path
     }
 }

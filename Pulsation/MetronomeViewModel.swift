@@ -9,6 +9,14 @@ enum HapticIntensity: String, CaseIterable, Identifiable {
 
     var id: Self { self }
 
+    var arcCount: Int {
+        switch self {
+        case .low: DesignSystem.Haptics.lowArcCount
+        case .medium: DesignSystem.Haptics.mediumArcCount
+        case .high: DesignSystem.Haptics.highArcCount
+        }
+    }
+
     var title: String {
         switch self {
         case .low: L10n.hapticIntensityLow
@@ -40,8 +48,9 @@ final class MetronomeViewModel: ObservableObject {
     @Published private(set) var isHapticsEnabled = DesignSystem.Preferences.defaultEnabled
     @Published private(set) var selectedHapticIntensity = DesignSystem.Haptics.defaultIntensity
 
-    private var timer: Timer?
-    private var lastTick = Date.distantPast
+    private var pulseTask: Task<Void, Never>?
+    private var pulseGeneration = 0
+    private var hapticPreviewTask: Task<Void, Never>?
     private var phaseStart = Date()
     private var baseBPM = DesignSystem.Tempo.initialBPM
     private var lastTap = Date.distantPast
@@ -106,10 +115,10 @@ final class MetronomeViewModel: ObservableObject {
         baseBPM = bpm
         elapsedSeconds = DesignSystem.Tempo.initialElapsedSeconds
         beat = DesignSystem.Tempo.firstBeatIndex
-        phaseStart = Date()
-        lastTick = .distantPast
 
         isPlaying = true
+        hapticPreviewTask?.cancel()
+        hapticPreviewTask = nil
         if isSoundEnabled {
             activateAudioSession { [weak self] in self?.beginPulseTimer() }
         } else {
@@ -118,19 +127,47 @@ final class MetronomeViewModel: ObservableObject {
     }
 
     private func beginPulseTimer() {
-        guard isPlaying, timer == nil else { return }
+        guard isPlaying, pulseTask == nil else { return }
         phaseStart = Date()
-        lastTick = .distantPast
-        let pulseTimer = Timer(timeInterval: DesignSystem.Timing.viewModelTickInterval, repeats: true) { [weak self] _ in
-            Task { @MainActor in self?.pulse() }
+        pulseGeneration += 1
+        let generation = pulseGeneration
+        let clock = ContinuousClock()
+
+        pulseTask = Task(priority: .high) { [weak self] in
+            do {
+                try await clock.sleep(for: DesignSystem.Timing.hapticInteractionSeparation)
+            } catch {
+                self?.finishPulseTask(generation: generation)
+                return
+            }
+
+            var nextDeadline = clock.now
+
+            while !Task.isCancelled {
+                guard let interval = self?.playBeat(for: generation) else { break }
+                nextDeadline = nextDeadline.advanced(by: interval)
+                if nextDeadline < clock.now {
+                    nextDeadline = clock.now.advanced(by: interval)
+                }
+
+                do {
+                    try await clock.sleep(
+                        until: nextDeadline,
+                        tolerance: DesignSystem.Timing.pulseSleepTolerance
+                    )
+                } catch {
+                    break
+                }
+            }
+
+            self?.finishPulseTask(generation: generation)
         }
-        timer = pulseTimer
-        RunLoop.main.add(pulseTimer, forMode: .common)
     }
 
     func stop() {
-        timer?.invalidate()
-        timer = nil
+        pulseGeneration += 1
+        pulseTask?.cancel()
+        pulseTask = nil
         isPlaying = false
         stopAudioSession()
     }
@@ -172,14 +209,32 @@ final class MetronomeViewModel: ObservableObject {
         UserDefaults.standard.set(enabled, forKey: DesignSystem.Preferences.hapticsEnabledKey)
     }
 
-    func setHapticIntensity(_ intensity: HapticIntensity) {
-        guard selectedHapticIntensity != intensity else { return }
-        selectedHapticIntensity = intensity
-        UserDefaults.standard.set(intensity.rawValue, forKey: DesignSystem.Preferences.hapticIntensityKey)
+    func selectHapticIntensity(_ intensity: HapticIntensity) {
+        guard isHapticsEnabled, !isPlaying else { return }
+        if selectedHapticIntensity != intensity {
+            selectedHapticIntensity = intensity
+            UserDefaults.standard.set(intensity.rawValue, forKey: DesignSystem.Preferences.hapticIntensityKey)
+        }
+        testHaptics()
     }
 
     func testHaptics() {
-        guard isHapticsEnabled else { return }
+        guard isHapticsEnabled, !isPlaying else { return }
+        hapticPreviewTask?.cancel()
+        let clock = ContinuousClock()
+        hapticPreviewTask = Task(priority: .userInitiated) { [weak self] in
+            do {
+                try await clock.sleep(for: DesignSystem.Timing.hapticInteractionSeparation)
+            } catch {
+                return
+            }
+            guard let self, self.isHapticsEnabled, !self.isPlaying else { return }
+            self.playSelectedHaptic()
+            self.hapticPreviewTask = nil
+        }
+    }
+
+    private func playSelectedHaptic() {
         WKInterfaceDevice.current().play(selectedHapticIntensity.watchKitType)
         hapticPulseCount += DesignSystem.Haptics.pulseIncrement
     }
@@ -206,10 +261,6 @@ final class MetronomeViewModel: ObservableObject {
             )
         }
 
-        let beatInterval = 60.0 / Double(bpm)
-        guard Date().timeIntervalSince(lastTick) >= beatInterval else { return }
-        lastTick = Date()
-
         let shouldClick: Bool
         if mode == .silence {
             let phase = elapsedSeconds / DesignSystem.Practice.silencePhaseSeconds
@@ -220,14 +271,27 @@ final class MetronomeViewModel: ObservableObject {
 
         if shouldClick {
             if isHapticsEnabled {
-                WKInterfaceDevice.current().play(selectedHapticIntensity.watchKitType)
-                hapticPulseCount += DesignSystem.Haptics.pulseIncrement
+                playSelectedHaptic()
             }
             if isSoundEnabled, audioSessionIsReady {
                 audioPlayer.play(from: DesignSystem.Audio.playbackStartTime)
             }
         }
         beat = (beat + DesignSystem.Tempo.bpmAdjustmentStep) % beatsPerBar
+    }
+
+    private func playBeat(for generation: Int) -> Duration? {
+        guard isPlaying, pulseGeneration == generation else { return nil }
+        pulse()
+        let intervalNanoseconds = Int64(
+            (DesignSystem.Timing.nanosecondsPerMinute / Double(bpm)).rounded()
+        )
+        return .nanoseconds(intervalNanoseconds)
+    }
+
+    private func finishPulseTask(generation: Int) {
+        guard pulseGeneration == generation else { return }
+        pulseTask = nil
     }
 
     private func activateAudioSession(onReady: (() -> Void)? = nil) {
@@ -295,6 +359,7 @@ private final class AudioClickPlayer: @unchecked Sendable {
         playbackQueue.async { [weak self] in
             guard let self, let audioURL = self.audioURL else { return }
             self.player = try? AVAudioPlayer(contentsOf: audioURL)
+            self.player?.prepareToPlay()
         }
     }
 

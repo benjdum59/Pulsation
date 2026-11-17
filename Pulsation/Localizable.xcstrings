@@ -1501,67 +1501,67 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "تُجرَّب الشدة عند اختيارها، وتُستخدم لكل نبضة."
+            "value" : "اضغط على مستوى لتجربته. سيُستخدم لكل نبضة."
           }
         },
         "bn" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "নির্বাচন করলে মাত্রাটি পরীক্ষা হবে এবং প্রতিটি বিটে ব্যবহার হবে।"
+            "value" : "একটি মাত্রায় চাপ দিয়ে পরীক্ষা করুন। সেটিই প্রতিটি বিটে ব্যবহার হবে।"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Each level is previewed when selected and used for every beat."
+            "value" : "Tap a level to try it. It is used for every beat."
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Cada nivel se prueba al seleccionarlo y se usa en cada pulso."
+            "value" : "Toca un nivel para probarlo. Se usará en cada pulso."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Chaque niveau est testé dès sa sélection et utilisé à chaque temps."
+            "value" : "Touche un niveau pour l’essayer. Il sera utilisé à chaque temps."
           }
         },
         "hi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "चुनने पर हर स्तर का पूर्वावलोकन होगा और वही हर बीट पर लागू होगा।"
+            "value" : "किसी स्तर को आज़माने के लिए उस पर टैप करें। वही हर बीट पर लागू होगा।"
           }
         },
         "id" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Setiap tingkat dicoba saat dipilih dan digunakan pada setiap ketukan."
+            "value" : "Ketuk tingkat untuk mencobanya. Tingkat itu digunakan pada setiap ketukan."
           }
         },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Cada nível é testado ao ser selecionado e usado em cada batida."
+            "value" : "Toque em um nível para testá-lo. Ele será usado em cada batida."
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Уровень проверяется при выборе и используется для каждого удара."
+            "value" : "Нажмите на уровень, чтобы попробовать его. Он будет использоваться для каждого удара."
           }
         },
         "ur" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "انتخاب کرتے ہی ہر سطح آزمائی جائے گی اور ہر بیٹ پر استعمال ہوگی۔"
+            "value" : "آزمانے کے لیے کسی سطح پر ٹیپ کریں۔ وہ ہر بیٹ پر استعمال ہوگی۔"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "选择后会立即试听该强度，并将其用于每一拍。"
+            "value" : "轻点某个强度即可试听，该强度会用于每一拍。"
           }
         }
       }
